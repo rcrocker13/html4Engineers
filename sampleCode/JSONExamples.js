@@ -1,7 +1,9 @@
+/* jslint plusplus:true; */
+
 Array.prototype.contains = function (val) {
     "use strict";
     var i = 0;
-    for (i; i < this.length; i = i + 1) {
+    for (i; i < this.length; i++) {
         if (this[i] === val) {
             return true;
         }
@@ -18,6 +20,18 @@ person = {
     },
     increaseAge: function () {
         "use strict";
-        this.age = this.age + 1;
+        this.age++;
     }
+};
+
+function extend(obj) {
+    "use strict";
+    function E() {}
+    E.prototype = obj;
+    return new E();
+}
+
+var f = function () {
+    "use strict";
+    console.log('Hello World');
 };

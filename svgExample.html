@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script src = "http://d3js.org/d3.v3.min.js"></script>
+    </head>
+    <body>
+    </body>
+    <script src="d3.js" charset="utf-8"></script>
+    <script>
+        var svg = d3.select('body').append('svg')
+        var w = window.innerWidth, h = window.innerHeight
+        svg.attr({width: w, height: h})
+        
+        var color = d3.scale.linear()
+            .domain([0, 6])
+            .range(['magenta', 'steelblue']);
+        
+        var circles = svg.selectAll('circle').data([1, 2, 3, 4, 5, 6])
+            .enter().append('circle');
+        
+        circles.attr('r', funtion(d) {return d * 10})
+            .attr('cx', function(d) {retunr d * 100})
+            .attr('cy', function(d) {retunr d * 100})
+            .attr('fill', function() {retunr d3.rgb('#00ff00')});
+        
+        
+        circles
+            .transition()
+            .duration(2000)
+            .delay(function(d) {return d * 1000})
+            .attr('cx', function(d) {return d * 100});
+    </script>
+</html>
