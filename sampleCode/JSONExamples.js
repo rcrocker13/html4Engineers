@@ -35,3 +35,12 @@ var f = function () {
     "use strict";
     console.log('Hello World');
 };
+
+//This function asks for no parameters, but instead uses the arguments array.
+function add() {
+    var result = 0;
+    for (var i = 0; i < arguments.length; i++) {
+        result += arguments[i];
+    }
+    return result;
+}
